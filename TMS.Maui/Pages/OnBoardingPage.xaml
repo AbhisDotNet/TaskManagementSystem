@@ -3,13 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TMS.Maui.Pages.OnBoardingPage"
              Title="OnBoardingPage">
-    <VerticalStackLayout>
+    <VerticalStackLayout HorizontalOptions="Center">
         <Label 
             Text="Welcome to .NET MAUI!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
         <Button Text="Got to" Margin="5" Clicked="Button_Clicked"></Button>
-        
+
     </VerticalStackLayout>
 </ContentPage>
