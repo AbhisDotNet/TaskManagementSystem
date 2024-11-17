@@ -11,4 +11,14 @@ public partial class OnBoardingPage : ContentPage
     {
 		await Shell.Current.GoToAsync($"//{nameof(DetailsPage)}");
     }
+
+    private async void signup_Clicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync(nameof(SignUpPage));
+    }
+
+    private async void signin_Clicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync(nameof(SigInPage));
+    }
 }

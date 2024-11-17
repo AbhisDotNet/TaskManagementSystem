@@ -1,8 +1,8 @@
 namespace TMS.Maui.Pages;
 
-public partial class SigInPage1 : ContentPage
+public partial class SigInPage : ContentPage
 {
-	public SigInPage1()
+	public SigInPage()
 	{
 		InitializeComponent();
 	}

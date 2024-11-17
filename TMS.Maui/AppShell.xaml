@@ -8,9 +8,10 @@
     Shell.FlyoutBehavior="Flyout"
     Title="TMS">
 
-    <ShellContent ContentTemplate="{DataTemplate pages:OnBoardingPage}" Shell.FlyoutBehavior="Disabled"/>
+    <ShellContent ContentTemplate="{DataTemplate pages:OnBoardingPage}" Shell.FlyoutBehavior="Disabled"
+                  Shell.FlyoutItemIsVisible="False"/>
 
-    <TabBar>
+    <TabBar FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent           
             Title="Home"
             Icon="home"
@@ -19,10 +20,80 @@
          />
         <ShellContent          
             Title="Profile"
-            Icon="userdetail"
+            Icon="profile"
             ContentTemplate="{DataTemplate pages:UserProfilePage}"
             Route="UserProfilePage"
          />
     </TabBar>
 
+    <MenuItem IconImageSource="logout" Text="Signout" x:Name="logout" Clicked="logout_Clicked"></MenuItem>
+
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid ColumnDefinitions="Auto, *, Auto"  RowDefinitions="Auto, Auto" Padding="10" ColumnSpacing="10" RowSpacing="5">
+                <Image Grid.Row="0"
+                       Grid.Column="0"
+                       Source="{Binding FlyoutIcon}" 
+                       HeightRequest="24" 
+                       WidthRequest="24" 
+                       BackgroundColor="Black"
+                       />
+                <Label Grid.Row="0" 
+                       Grid.Column="1" 
+                       Text="{Binding Title}" 
+                       TextColor="BlueViolet"
+                       FontFamily="Serif"/>
+
+                <Image Grid.Row="0" 
+                       Grid.Column="2" 
+                       Source="rightarrow" 
+                       HeightRequest="24" 
+                       WidthRequest="24" 
+                       Background="Black"/>
+                <BoxView Grid.Row="1" Grid.ColumnSpan="3" Background="BlueViolet" HeightRequest="1"/>
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <Grid ColumnDefinitions="Auto, Auto"  RowDefinitions="Auto, Auto" Padding="10" ColumnSpacing="10">
+            <Image Grid.Row="0"
+           Grid.Column="0"
+           Source="{Binding Icon}" 
+           HeightRequest="24" 
+           WidthRequest="24" 
+           BackgroundColor="Black"
+           />
+                <Label Grid.Row="0" 
+           Grid.Column="1" 
+           Text="{Binding Text}" 
+           TextColor="BlueViolet"
+           FontFamily="Serif"/>
+            </Grid>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+
+    <Shell.FlyoutHeader>
+        <Border Background="LightYellow" Padding="10" StrokeThickness="0">
+            <VerticalStackLayout HorizontalOptions="Center">
+                <Image Source="logo" HeightRequest="70" WidthRequest="70" HorizontalOptions="Center"/>
+                <Label Text="TMS" TextColor="BlueViolet" HorizontalOptions="Center" FontAttributes="Bold" FontSize="19" FontFamily="Serif"></Label>
+            </VerticalStackLayout>
+        </Border>
+    </Shell.FlyoutHeader>
+
+    <Shell.FlyoutFooter>
+        <Border Background="LightYellow" Padding="10" StrokeThickness="0">
+            <VerticalStackLayout>
+                <Grid RowDefinitions="Auto, *" ColumnDefinitions="Auto,*, *" Padding="0">
+                    <Label Grid.Row="0" Grid.Column="0" Text="Devloped By : Abhisshek" FontSize="11" TextColor="BlueViolet" FontFamily="Serif"/>
+                    <Image Source="logo" Grid.Row="0" Grid.Column="1" HeightRequest="25" WidthRequest="30"/>
+                    <Label Grid.Row="0" Grid.Column="2" Text="App Version : 1.00" FontSize="10" HorizontalOptions="End" TextColor="BlueViolet" FontFamily="Serif"/>
+                </Grid>
+            </VerticalStackLayout>
+
+        </Border>
+
+    </Shell.FlyoutFooter>
 </Shell>

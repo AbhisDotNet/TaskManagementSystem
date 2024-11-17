@@ -10,6 +10,8 @@
             HorizontalOptions="Center" />
 
         <Button Text="Got to" Margin="5" Clicked="Button_Clicked"></Button>
+        <Button Text="Signup" x:Name="signup" Margin="5" Clicked="signup_Clicked"></Button>
+        <Button Text="Signin" x:Name="signin" Margin="5" Clicked="signin_Clicked"></Button>
 
     </VerticalStackLayout>
 </ContentPage>

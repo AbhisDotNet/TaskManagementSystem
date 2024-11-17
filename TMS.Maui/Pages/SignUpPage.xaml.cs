@@ -1,8 +1,8 @@
 namespace TMS.Maui.Pages;
 
-public partial class SignUpPage1 : ContentPage
+public partial class SignUpPage : ContentPage
 {
-	public SignUpPage1()
+	public SignUpPage()
 	{
 		InitializeComponent();
 	}
